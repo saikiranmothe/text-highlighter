@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Keyword:</b>
+  <%= @key_word.keyword %>
+</p>
+
+<p>
+  <b>Color name:</b>
+  <%= @key_word.color_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_key_word_path(@key_word),class: "btn" %> --
+<%= link_to 'Back', key_words_path,class: "btn" %>

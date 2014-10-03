@@ -1,0 +1,33 @@
+<style type="text/css">
+  .well{
+    margin-top: 40px;
+  }
+#file_name{
+  float: right;
+}
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<p id="file_name">
+  <b>File name:</b>
+  <%= @file_upload.file_name %>
+</p>
+
+<p class="well">
+  <b>Document text:</b>
+  <%= @file_upload.document_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_file_upload_path(@file_upload),class: "btn" %> --
+<%= link_to 'Back', file_uploads_path,class: "btn" %>
+
+<script type="text/javascript">
+  var values = "<%= @key_words %>"
+  var temp = new Array();
+  temp = values.split(",");
+  // alert(temp);
+  $('body p').highlight(temp);
+  $(".highlight").css({ backgroundColor: "#<%= @color %>" });
+</script>

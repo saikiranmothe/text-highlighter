@@ -1,0 +1,37 @@
+<%= form_for(@key_word) do |f| %>
+  <% if @key_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@key_word.errors.count, "error") %> prohibited this key_word from being saved:</h2>
+
+      <ul>
+      <% @key_word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<style type="text/css">
+#key_word_keyword
+{
+  height:85px;
+}
+</style>
+<h4 class="text-info">Note: Only the last created keywords list will be selected for highlighting.So, try to edit the list and update whenever you have to add new key words.</h4>
+  <div class="field" style="height:30%">
+    <%= f.label :keywords %>
+    <%= f.text_area :keyword,placeholder:"Enter keywords seperated by coma e.g., Hello,Beifall,etc." %>
+  </div><br/>
+  <div class="field">
+    <%= f.label :pick_a_color %>
+    <%= f.text_field :color_name,placeholder:"Click here to select a color" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(function() {
+      $('#key_word_color_name').wheelColorPicker();
+    });
+</script>

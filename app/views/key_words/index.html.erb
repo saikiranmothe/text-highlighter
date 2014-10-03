@@ -1,0 +1,31 @@
+<h1>Listing key words</h1>
+</br>
+<%= link_to 'New Key word', new_key_word_path,class: "btn" %>
+</br>
+</br>
+<div class="table-responsive">
+  <div class='span11 table-scrollable'>
+    <table class="table">
+      <tr>
+        <th>Keyword</th>
+        <th>Color name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @key_words.each do |key_word| %>
+      <tr>
+        <td><%= key_word.keyword %></td>
+        <td><%= key_word.color_name %></td>
+        <td><%= link_to 'Show', key_word,class: "btn" %>
+        <%= link_to 'Edit', edit_key_word_path(key_word),class: "btn" %>
+        <%= link_to 'Destroy', key_word, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
+<br/>
+
+
