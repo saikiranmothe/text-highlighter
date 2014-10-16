@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
@@ -22,7 +22,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'rails_12factor'
 gem 'jquery-rails'
 gem "rmagick" 
 gem 'carrierwave'
